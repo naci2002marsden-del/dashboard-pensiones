@@ -1,0 +1,54 @@
+{
+  "generado": "2026-08-30T09:15:00-05:00",
+  "anioEscolar": "2026",
+  "institucion": "COLEGIO CLIMAT",
+  "mesActual": "Agosto",
+  "kpis": {
+    "totalRecaudado": 184350,
+    "pctCobranzaMes": 78.5,
+    "totalAlumnos": 92,
+    "alDia": 74,
+    "morosos": 18,
+    "tasaMorosidad": 19.6,
+    "moneda": "S/"
+  },
+  "recaudacionMensual": [
+    { "mes": "Matrícula",  "real": 27600, "esperado": 27600 },
+    { "mes": "Marzo",      "real": 26800, "esperado": 27600 },
+    { "mes": "Abril",      "real": 27100, "esperado": 27600 },
+    { "mes": "Mayo",       "real": 25900, "esperado": 27600 },
+    { "mes": "Junio",      "real": 24300, "esperado": 27600 },
+    { "mes": "Julio",      "real": 22850, "esperado": 27600 },
+    { "mes": "Agosto",     "real": 21675, "esperado": 27600 },
+    { "mes": "Setiembre",  "real": 0,     "esperado": 27600 },
+    { "mes": "Octubre",    "real": 0,     "esperado": 27600 },
+    { "mes": "Noviembre",  "real": 0,     "esperado": 27600 },
+    { "mes": "Diciembre",  "real": 0,     "esperado": 27600 }
+  ],
+  "ingresosPorNivel": {
+    "Inicial": 41200,
+    "Primaria": 82650,
+    "Secundaria": 60500
+  },
+  "ultimosPagos": [
+    { "id": "REC-2026-0087", "fecha": "30/08/2026", "alumno": "QUISPE MAMANI, Lucía",      "mes": "Agosto", "monto": 300, "metodo": "Yape/Plin" },
+    { "id": "REC-2026-0086", "fecha": "29/08/2026", "alumno": "RAMÍREZ SOTO, Diego",       "mes": "Agosto", "monto": 350, "metodo": "Transferencia" },
+    { "id": "REC-2026-0085", "fecha": "29/08/2026", "alumno": "FLORES CHÁVEZ, Valentina",  "mes": "Agosto", "monto": 250, "metodo": "Efectivo" },
+    { "id": "REC-2026-0084", "fecha": "28/08/2026", "alumno": "HUAMÁN LÓPEZ, Mateo",       "mes": "Agosto", "monto": 350, "metodo": "Tarjeta" },
+    { "id": "REC-2026-0083", "fecha": "28/08/2026", "alumno": "CONDORI VARGAS, Ariana",    "mes": "Agosto", "monto": 150, "metodo": "Yape/Plin" },
+    { "id": "REC-2026-0082", "fecha": "27/08/2026", "alumno": "TORRES RÍOS, Sebastián",    "mes": "Agosto", "monto": 300, "metodo": "Efectivo" },
+    { "id": "REC-2026-0081", "fecha": "27/08/2026", "alumno": "VÁSQUEZ PEÑA, Camila",      "mes": "Julio",  "monto": 350, "metodo": "Transferencia" },
+    { "id": "REC-2026-0080", "fecha": "26/08/2026", "alumno": "ROJAS DÍAZ, Thiago",        "mes": "Agosto", "monto": 250, "metodo": "Yape/Plin" },
+    { "id": "REC-2026-0079", "fecha": "26/08/2026", "alumno": "MENDOZA CRUZ, Isabella",    "mes": "Agosto", "monto": 300, "metodo": "Efectivo" },
+    { "id": "REC-2026-0078", "fecha": "25/08/2026", "alumno": "GUTIÉRREZ SILVA, Joaquín",  "mes": "Agosto", "monto": 350, "metodo": "Tarjeta" }
+  ],
+  "morosos": [
+    { "dni": "71234567", "alumno": "CASTILLO NÚÑEZ, Fabricio", "nivelGrado": "Secundaria - 3° Año", "mesesDebidos": 3, "deuda": 1050 },
+    { "dni": "72345678", "alumno": "PAREDES LEÓN, Micaela",     "nivelGrado": "Primaria - 5° Grado", "mesesDebidos": 2, "deuda": 600 },
+    { "dni": "73456789", "alumno": "SALAZAR ORÉ, Benjamín",     "nivelGrado": "Secundaria - 1° Año", "mesesDebidos": 2, "deuda": 700 },
+    { "dni": "74567890", "alumno": "AGUILAR PINTO, Renata",     "nivelGrado": "Inicial - 5 años",    "mesesDebidos": 2, "deuda": 500 },
+    { "dni": "75678901", "alumno": "ZAMORA ROCA, Emiliano",     "nivelGrado": "Primaria - 2° Grado", "mesesDebidos": 1, "deuda": 300 },
+    { "dni": "76789012", "alumno": "VILLANUEVA CANO, Antonella","nivelGrado": "Secundaria - 4° Año", "mesesDebidos": 1, "deuda": 350 },
+    { "dni": "77890123", "alumno": "ESPINOZA REYES, Gael",      "nivelGrado": "Primaria - 1° Grado", "mesesDebidos": 1, "deuda": 300 }
+  ]
+}

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard de Pensiones — Colegio Climat</title>
+  <meta name="description" content="Panel de control de cobranzas y pensiones escolares del Colegio Climat.">
+
+  <!-- TailwindCSS (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.3/chart.umd.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            climat:   { azul:'#2E3192', azul2:'#1B75BC', naranja:'#F7941E', rojo:'#ED1C24' },
+          },
+          fontFamily: { sans: ['Segoe UI','Roboto','Helvetica','Arial','sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body{ background:#f4f6fb; }
+    .card{ box-shadow:0 1px 3px rgba(16,24,40,.08),0 1px 2px rgba(16,24,40,.04); }
+    .kpi-ico{ width:48px;height:48px;display:flex;align-items:center;justify-content:center;
+              border-radius:14px;font-size:22px; }
+    ::-webkit-scrollbar{height:8px;width:8px;} ::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:8px;}
+  </style>
+</head>
+<body class="font-sans text-slate-800 min-h-screen">
+
+  <!-- ====================== ENCABEZADO ====================== -->
+  <header class="bg-climat-azul text-white">
+    <div class="max-w-7xl mx-auto px-5 py-4 flex items-center gap-4">
+      <img src="assets/logo-climat.jpeg" alt="Logo Colegio Climat"
+           class="h-14 w-14 rounded-full bg-white p-1 object-contain shadow"
+           onerror="this.style.display='none'">
+      <div>
+        <h1 class="text-lg sm:text-xl font-extrabold leading-tight">Colegio Climat</h1>
+        <p class="text-white/70 text-xs sm:text-sm">Panel de Cobranzas y Pensiones Escolares</p>
+      </div>
+      <div class="ml-auto text-right">
+        <span class="inline-block bg-climat-naranja text-white text-xs font-bold px-3 py-1 rounded-full">
+          Año escolar <span id="anio">—</span>
+        </span>
+        <p class="text-white/60 text-[11px] mt-1">Actualizado: <span id="actualizado">—</span></p>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-5 py-6 space-y-6">
+
+    <!-- ====================== KPIs ====================== -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="card bg-white rounded-2xl p-5 flex items-center gap-4">
+        <div class="kpi-ico bg-climat-azul/10 text-climat-azul">💰</div>
+        <div>
+          <p class="text-xs text-slate-500 font-semibold uppercase tracking-wide">Total recaudado</p>
+          <p id="kpiTotal" class="text-2xl font-extrabold text-climat-azul">—</p>
+        </div>
+      </div>
+      <div class="card bg-white rounded-2xl p-5 flex items-center gap-4">
+        <div class="kpi-ico bg-climat-azul2/10 text-climat-azul2">📈</div>
+        <div>
+          <p class="text-xs text-slate-500 font-semibold uppercase tracking-wide">% cobranza del mes</p>
+          <p id="kpiCobranza" class="text-2xl font-extrabold text-climat-azul2">—</p>
+          <p id="kpiMes" class="text-[11px] text-slate-400">—</p>
+        </div>
+      </div>
+      <div class="card bg-white rounded-2xl p-5 flex items-center gap-4">
+        <div class="kpi-ico bg-climat-naranja/10 text-climat-naranja">🎓</div>
+        <div>
+          <p class="text-xs text-slate-500 font-semibold uppercase tracking-wide">Total alumnos</p>
+          <p id="kpiAlumnos" class="text-2xl font-extrabold text-climat-naranja">—</p>
+          <p id="kpiAlDia" class="text-[11px] text-slate-400">—</p>
+        </div>
+      </div>
+      <div class="card bg-white rounded-2xl p-5 flex items-center gap-4">
+        <div class="kpi-ico bg-climat-rojo/10 text-climat-rojo">⚠️</div>
+        <div>
+          <p class="text-xs text-slate-500 font-semibold uppercase tracking-wide">Tasa de morosidad</p>
+          <p id="kpiMorosidad" class="text-2xl font-extrabold text-climat-rojo">—</p>
+          <p id="kpiMorosos" class="text-[11px] text-slate-400">—</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== GRÁFICOS ====================== -->
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div class="card bg-white rounded-2xl p-5 lg:col-span-2">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="font-bold text-slate-700">Recaudación mensual — Real vs. Esperado</h2>
+          <span class="text-xs text-slate-400">en <span class="moneda">S/</span></span>
+        </div>
+        <div class="relative h-72"><canvas id="chartMensual"></canvas></div>
+      </div>
+      <div class="card bg-white rounded-2xl p-5">
+        <h2 class="font-bold text-slate-700 mb-3">Ingresos por nivel</h2>
+        <div class="relative h-72"><canvas id="chartNivel"></canvas></div>
+      </div>
+    </section>
+
+    <!-- ====================== TABLA DE MOROSOS ====================== -->
+    <section class="card bg-white rounded-2xl p-5">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
+        <h2 class="font-bold text-slate-700 mr-auto">Alumnos pendientes de pago</h2>
+        <select id="filtroNivel"
+          class="border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-climat-azul outline-none">
+          <option value="">Todos los niveles</option>
+          <option value="Inicial">Inicial</option>
+          <option value="Primaria">Primaria</option>
+          <option value="Secundaria">Secundaria</option>
+        </select>
+        <input id="buscador" type="search" placeholder="Buscar por nombre o DNI…"
+          class="border border-slate-300 rounded-lg px-3 py-2 text-sm w-full sm:w-64 focus:ring-2 focus:ring-climat-azul outline-none">
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-slate-500 border-b border-slate-200">
+              <th class="py-2 pr-4 font-semibold">DNI</th>
+              <th class="py-2 pr-4 font-semibold">Alumno</th>
+              <th class="py-2 pr-4 font-semibold">Nivel / Grado</th>
+              <th class="py-2 pr-4 font-semibold text-center">Meses debidos</th>
+              <th class="py-2 pr-4 font-semibold text-right">Deuda</th>
+            </tr>
+          </thead>
+          <tbody id="tablaMorosos"></tbody>
+        </table>
+        <p id="sinResultados" class="hidden text-center text-slate-400 py-6">Sin resultados.</p>
+      </div>
+    </section>
+
+    <!-- ====================== ÚLTIMOS PAGOS ====================== -->
+    <section class="card bg-white rounded-2xl p-5">
+      <h2 class="font-bold text-slate-700 mb-4">Últimos 10 pagos registrados</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="text-left text-slate-500 border-b border-slate-200">
+              <th class="py-2 pr-4 font-semibold">Recibo</th>
+              <th class="py-2 pr-4 font-semibold">Fecha</th>
+              <th class="py-2 pr-4 font-semibold">Alumno</th>
+              <th class="py-2 pr-4 font-semibold">Mes</th>
+              <th class="py-2 pr-4 font-semibold">Método</th>
+              <th class="py-2 pr-4 font-semibold text-right">Monto</th>
+            </tr>
+          </thead>
+          <tbody id="tablaPagos"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="text-center text-xs text-slate-400 py-4">
+      Colegio Climat · Datos sincronizados desde Google Sheets vía GitHub · <span id="pieFecha">—</span>
+    </footer>
+  </main>
+
+  <script>
+  /* ============================================================
+   *  DASHBOARD — Colegio Climat
+   *  Consume data/resumen.json (generado por Apps Script).
+   * ============================================================ */
+
+  // Paleta institucional
+  const C = { azul:'#2E3192', azul2:'#1B75BC', naranja:'#F7941E', rojo:'#ED1C24' };
+
+  // Datos de respaldo (permiten previsualizar aunque falle el fetch local).
+  const FALLBACK = {
+    anioEscolar:'2026', mesActual:'—',
+    kpis:{ totalRecaudado:0, pctCobranzaMes:0, totalAlumnos:0, alDia:0, morosos:0, tasaMorosidad:0, moneda:'S/' },
+    recaudacionMensual:[], ingresosPorNivel:{Inicial:0,Primaria:0,Secundaria:0},
+    ultimosPagos:[], morosos:[], generado:new Date().toISOString()
+  };
+
+  let DATA = FALLBACK;
+  let MOROSOS = [];
+
+  const fmtMoneda = (n, m='S/') =>
+    m + ' ' + Number(n||0).toLocaleString('es-PE', {minimumFractionDigits:0, maximumFractionDigits:0});
+  const fmtPct = n => Number(n||0).toLocaleString('es-PE',{minimumFractionDigits:1,maximumFractionDigits:1}) + '%';
+
+  async function cargar() {
+    try {
+      const r = await fetch('data/resumen.json', { cache:'no-store' });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      DATA = await r.json();
+    } catch (e) {
+      console.warn('No se pudo cargar data/resumen.json — usando respaldo.', e);
+    }
+    render();
+  }
+
+  function render() {
+    const k = DATA.kpis || FALLBACK.kpis;
+    const m = k.moneda || 'S/';
+    document.querySelectorAll('.moneda').forEach(el => el.textContent = m);
+
+    // Encabezado
+    document.getElementById('anio').textContent = DATA.anioEscolar || '—';
+    document.getElementById('actualizado').textContent = fechaLegible(DATA.generado);
+    document.getElementById('pieFecha').textContent = fechaLegible(DATA.generado);
+
+    // KPIs
+    document.getElementById('kpiTotal').textContent     = fmtMoneda(k.totalRecaudado, m);
+    document.getElementById('kpiCobranza').textContent  = fmtPct(k.pctCobranzaMes);
+    document.getElementById('kpiMes').textContent       = 'Mes: ' + (DATA.mesActual || '—');
+    document.getElementById('kpiAlumnos').textContent   = k.totalAlumnos ?? 0;
+    document.getElementById('kpiAlDia').textContent     = (k.alDia ?? 0) + ' al día';
+    document.getElementById('kpiMorosidad').textContent = fmtPct(k.tasaMorosidad);
+    document.getElementById('kpiMorosos').textContent   = (k.morosos ?? 0) + ' morosos';
+
+    // Los gráficos se aíslan: si el CDN de Chart.js no carga, las tablas y KPIs
+    // siguen mostrándose igual.
+    try {
+      if (typeof Chart === 'function') { dibujarMensual(); dibujarNivel(); }
+      else console.warn('Chart.js no disponible — se omiten los gráficos.');
+    } catch (e) { console.error('Error al dibujar gráficos:', e); }
+
+    MOROSOS = DATA.morosos || [];
+    pintarMorosos();
+    pintarPagos();
+  }
+
+  /* ---------- Gráfico de barras: Real vs Esperado ---------- */
+  let chM;
+  function dibujarMensual() {
+    const rows = DATA.recaudacionMensual || [];
+    const labels = rows.map(r => r.mes);
+    if (chM) chM.destroy();
+    chM = new Chart(document.getElementById('chartMensual'), {
+      type:'bar',
+      data:{ labels,
+        datasets:[
+          { label:'Esperado', data:rows.map(r=>r.esperado), backgroundColor:'#c7cad6', borderRadius:6, barPercentage:.9, categoryPercentage:.7 },
+          { label:'Real',     data:rows.map(r=>r.real),     backgroundColor:C.azul,    borderRadius:6, barPercentage:.9, categoryPercentage:.7 }
+        ]},
+      options:{ responsive:true, maintainAspectRatio:false,
+        plugins:{ legend:{ position:'top', labels:{ boxWidth:12, usePointStyle:true } },
+          tooltip:{ callbacks:{ label:c => c.dataset.label + ': ' + fmtMoneda(c.parsed.y, DATA.kpis?.moneda) } } },
+        scales:{ y:{ beginAtZero:true, ticks:{ callback:v => (DATA.kpis?.moneda||'S/')+' '+v.toLocaleString('es-PE') },
+                     grid:{ color:'#eef0f5' } },
+                 x:{ grid:{ display:false } } } }
+    });
+  }
+
+  /* ---------- Gráfico de dona: Ingresos por nivel ---------- */
+  let chN;
+  function dibujarNivel() {
+    const ing = DATA.ingresosPorNivel || {};
+    const labels = Object.keys(ing);
+    const vals = Object.values(ing);
+    const total = vals.reduce((a,b)=>a+Number(b||0),0) || 1;
+    if (chN) chN.destroy();
+    chN = new Chart(document.getElementById('chartNivel'), {
+      type:'doughnut',
+      data:{ labels,
+        datasets:[{ data:vals, backgroundColor:[C.azul2, C.naranja, C.azul], borderColor:'#fff', borderWidth:3 }] },
+      options:{ responsive:true, maintainAspectRatio:false, cutout:'62%',
+        plugins:{ legend:{ position:'bottom', labels:{ boxWidth:12, usePointStyle:true } },
+          tooltip:{ callbacks:{ label:c => {
+            const v = c.parsed; return ' ' + c.label + ': ' + fmtMoneda(v, DATA.kpis?.moneda) +
+              ' (' + (v/total*100).toFixed(1) + '%)'; } } } } }
+    });
+  }
+
+  /* ---------- Tabla de morosos con buscador + filtro ---------- */
+  function pintarMorosos() {
+    const q = (document.getElementById('buscador').value || '').toLowerCase().trim();
+    const nivel = document.getElementById('filtroNivel').value;
+    const m = DATA.kpis?.moneda || 'S/';
+    const filas = MOROSOS.filter(a => {
+      const okNivel = !nivel || (a.nivelGrado||'').startsWith(nivel);
+      const okTexto = !q || (a.alumno||'').toLowerCase().includes(q) || String(a.dni||'').includes(q);
+      return okNivel && okTexto;
+    });
+    const tb = document.getElementById('tablaMorosos');
+    tb.innerHTML = filas.map(a => `
+      <tr class="border-b border-slate-100 hover:bg-slate-50">
+        <td class="py-2 pr-4 text-slate-500">${a.dni||''}</td>
+        <td class="py-2 pr-4 font-medium">${a.alumno||''}</td>
+        <td class="py-2 pr-4">${a.nivelGrado||''}</td>
+        <td class="py-2 pr-4 text-center">
+          <span class="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-2 py-0.5 rounded-full">${a.mesesDebidos||0}</span>
+        </td>
+        <td class="py-2 pr-4 text-right font-bold text-climat-rojo">${fmtMoneda(a.deuda, m)}</td>
+      </tr>`).join('');
+    document.getElementById('sinResultados').classList.toggle('hidden', filas.length > 0);
+  }
+
+  /* ---------- Tabla de últimos pagos ---------- */
+  function pintarPagos() {
+    const m = DATA.kpis?.moneda || 'S/';
+    const tb = document.getElementById('tablaPagos');
+    tb.innerHTML = (DATA.ultimosPagos||[]).map(p => `
+      <tr class="border-b border-slate-100 hover:bg-slate-50">
+        <td class="py-2 pr-4 text-slate-500">${p.id||''}</td>
+        <td class="py-2 pr-4">${p.fecha||''}</td>
+        <td class="py-2 pr-4 font-medium">${p.alumno||''}</td>
+        <td class="py-2 pr-4">${p.mes||''}</td>
+        <td class="py-2 pr-4">${p.metodo||''}</td>
+        <td class="py-2 pr-4 text-right font-semibold text-climat-azul">${fmtMoneda(p.monto, m)}</td>
+      </tr>`).join('');
+  }
+
+  function fechaLegible(iso) {
+    if (!iso) return '—';
+    const d = new Date(iso);
+    if (isNaN(d)) return iso;
+    return d.toLocaleString('es-PE', { day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit' });
+  }
+
+  document.getElementById('buscador').addEventListener('input', pintarMorosos);
+  document.getElementById('filtroNivel').addEventListener('change', pintarMorosos);
+
+  cargar();
+  </script>
+</body>
+</html>
