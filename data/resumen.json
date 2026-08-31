@@ -1,10 +1,10 @@
 {
-  "generado": "2026-08-31T15:02:55-05:00",
+  "generado": "2026-08-31T15:05:53-05:00",
   "anioEscolar": "2026",
   "institucion": "COLEGIO CLIMAT",
   "mesActual": "Agosto",
   "kpis": {
-    "totalRecaudado": 1400,
+    "totalRecaudado": 1700,
     "pctCobranzaMes": 14.4,
     "totalAlumnos": 14,
     "alDia": 0,
@@ -40,7 +40,7 @@
     },
     {
       "mes": "Julio",
-      "real": 0,
+      "real": 300,
       "esperado": 4850
     },
     {
@@ -71,10 +71,18 @@
   ],
   "ingresosPorNivel": {
     "Inicial": 0,
-    "Primaria": 800,
+    "Primaria": 1100,
     "Secundaria": 600
   },
   "ultimosPagos": [
+    {
+      "id": "REC-2026-0006",
+      "fecha": "31/08/2026",
+      "alumno": "GARCÍA PÉREZ María",
+      "mes": "Julio",
+      "monto": 300,
+      "metodo": "Transferencia"
+    },
     {
       "id": "REC-2026-0005",
       "fecha": "31/08/2026",
@@ -212,8 +220,8 @@
       "dni": "71234567",
       "alumno": "GARCÍA PÉREZ María",
       "nivelGrado": "Primaria - 3° Grado",
-      "mesesDebidos": 6,
-      "deuda": 1800
+      "mesesDebidos": 5,
+      "deuda": 1500
     }
   ]
 }
