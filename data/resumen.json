@@ -1,10 +1,10 @@
 {
-  "generado": "2026-08-31T15:05:53-05:00",
+  "generado": "2026-08-31T15:09:45-05:00",
   "anioEscolar": "2026",
   "institucion": "COLEGIO CLIMAT",
   "mesActual": "Agosto",
   "kpis": {
-    "totalRecaudado": 1700,
+    "totalRecaudado": 2050,
     "pctCobranzaMes": 14.4,
     "totalAlumnos": 14,
     "alDia": 0,
@@ -40,7 +40,7 @@
     },
     {
       "mes": "Julio",
-      "real": 300,
+      "real": 650,
       "esperado": 4850
     },
     {
@@ -70,11 +70,19 @@
     }
   ],
   "ingresosPorNivel": {
-    "Inicial": 0,
+    "Inicial": 350,
     "Primaria": 1100,
     "Secundaria": 600
   },
   "ultimosPagos": [
+    {
+      "id": "REC-2026-0007",
+      "fecha": "31/08/2026",
+      "alumno": "ROJAS SALAS Luis Alberto",
+      "mes": "Julio",
+      "monto": 350,
+      "metodo": "Efectivo"
+    },
     {
       "id": "REC-2026-0006",
       "fecha": "31/08/2026",
@@ -196,13 +204,6 @@
       "deuda": 2100
     },
     {
-      "dni": "70000004",
-      "alumno": "ROJAS SALAS Luis Alberto",
-      "nivelGrado": "Inicial - 5 años",
-      "mesesDebidos": 7,
-      "deuda": 2100
-    },
-    {
       "dni": "70000009",
       "alumno": "CRUZ TORRES Valentina",
       "nivelGrado": "Inicial - 3 años",
@@ -215,6 +216,13 @@
       "nivelGrado": "Inicial - 4 años",
       "mesesDebidos": 7,
       "deuda": 2100
+    },
+    {
+      "dni": "70000004",
+      "alumno": "ROJAS SALAS Luis Alberto",
+      "nivelGrado": "Inicial - 5 años",
+      "mesesDebidos": 6,
+      "deuda": 1800
     },
     {
       "dni": "71234567",
