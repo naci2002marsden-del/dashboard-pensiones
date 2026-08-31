@@ -1,11 +1,11 @@
 {
-  "generado": "2026-08-31T15:09:45-05:00",
+  "generado": "2026-08-31T15:21:00-05:00",
   "anioEscolar": "2026",
   "institucion": "COLEGIO CLIMAT",
   "mesActual": "Agosto",
   "kpis": {
     "totalRecaudado": 2050,
-    "pctCobranzaMes": 14.4,
+    "pctCobranzaMes": 8.3,
     "totalAlumnos": 14,
     "alDia": 0,
     "morosos": 14,
@@ -16,57 +16,57 @@
     {
       "mes": "Matrícula",
       "real": 0,
-      "esperado": 4850
+      "esperado": 4800
     },
     {
       "mes": "Marzo",
       "real": 0,
-      "esperado": 4850
+      "esperado": 4800
     },
     {
       "mes": "Abril",
       "real": 0,
-      "esperado": 4850
+      "esperado": 4800
     },
     {
       "mes": "Mayo",
       "real": 0,
-      "esperado": 4850
+      "esperado": 4800
     },
     {
       "mes": "Junio",
       "real": 0,
-      "esperado": 4850
+      "esperado": 4800
     },
     {
       "mes": "Julio",
       "real": 650,
-      "esperado": 4850
+      "esperado": 4800
     },
     {
       "mes": "Agosto",
-      "real": 700,
-      "esperado": 4850
+      "real": 400,
+      "esperado": 4800
     },
     {
       "mes": "Setiembre",
       "real": 500,
-      "esperado": 4850
+      "esperado": 4800
     },
     {
       "mes": "Octubre",
       "real": 200,
-      "esperado": 4850
+      "esperado": 4800
     },
     {
       "mes": "Noviembre",
       "real": 0,
-      "esperado": 4850
+      "esperado": 4800
     },
     {
       "mes": "Diciembre",
       "real": 0,
-      "esperado": 4850
+      "esperado": 4800
     }
   ],
   "ingresosPorNivel": {
@@ -127,33 +127,12 @@
       "id": "REC-2026-0001",
       "fecha": "29/08/2026",
       "alumno": "GARCÍA PÉREZ María",
-      "mes": "Agosto",
+      "mes": "julio",
       "monto": 300,
       "metodo": "Efectivo"
     }
   ],
   "morosos": [
-    {
-      "dni": "70000008",
-      "alumno": "GÓMEZ SILVA Mateo",
-      "nivelGrado": "Secundaria - 5° Año",
-      "mesesDebidos": 7,
-      "deuda": 2800
-    },
-    {
-      "dni": "70000011",
-      "alumno": "RAMÍREZ VERA Sebastián",
-      "nivelGrado": "Secundaria - 2° Año",
-      "mesesDebidos": 7,
-      "deuda": 2800
-    },
-    {
-      "dni": "70000013",
-      "alumno": "MORALES PINO Joaquín",
-      "nivelGrado": "Secundaria - 4° Año",
-      "mesesDebidos": 7,
-      "deuda": 2800
-    },
     {
       "dni": "70000002",
       "alumno": "MENDOZA LÓPEZ Ana María",
@@ -176,9 +155,44 @@
       "deuda": 2450
     },
     {
+      "dni": "70000008",
+      "alumno": "GÓMEZ SILVA Mateo",
+      "nivelGrado": "Secundaria - 5° Año",
+      "mesesDebidos": 7,
+      "deuda": 2450
+    },
+    {
+      "dni": "70000009",
+      "alumno": "CRUZ TORRES Valentina",
+      "nivelGrado": "Inicial - 3 años",
+      "mesesDebidos": 7,
+      "deuda": 2450
+    },
+    {
       "dni": "70000010",
       "alumno": "RUIZ PAREDES Camila",
       "nivelGrado": "Primaria - 4° Grado",
+      "mesesDebidos": 7,
+      "deuda": 2450
+    },
+    {
+      "dni": "70000011",
+      "alumno": "RAMÍREZ VERA Sebastián",
+      "nivelGrado": "Secundaria - 2° Año",
+      "mesesDebidos": 7,
+      "deuda": 2450
+    },
+    {
+      "dni": "70000013",
+      "alumno": "MORALES PINO Joaquín",
+      "nivelGrado": "Secundaria - 4° Año",
+      "mesesDebidos": 7,
+      "deuda": 2450
+    },
+    {
+      "dni": "70000014",
+      "alumno": "VEGA SOTO Daniela",
+      "nivelGrado": "Inicial - 4 años",
       "mesesDebidos": 7,
       "deuda": 2450
     },
@@ -190,13 +204,6 @@
       "deuda": 2450
     },
     {
-      "dni": "70000003",
-      "alumno": "CASTILLO NÚÑEZ Fabricio",
-      "nivelGrado": "Secundaria - 3° Año",
-      "mesesDebidos": 6,
-      "deuda": 2400
-    },
-    {
       "dni": "70000001",
       "alumno": "PÉREZ GARCÍA Juan Carlos",
       "nivelGrado": "Inicial - 4 años",
@@ -204,17 +211,10 @@
       "deuda": 2100
     },
     {
-      "dni": "70000009",
-      "alumno": "CRUZ TORRES Valentina",
-      "nivelGrado": "Inicial - 3 años",
-      "mesesDebidos": 7,
-      "deuda": 2100
-    },
-    {
-      "dni": "70000014",
-      "alumno": "VEGA SOTO Daniela",
-      "nivelGrado": "Inicial - 4 años",
-      "mesesDebidos": 7,
+      "dni": "70000003",
+      "alumno": "CASTILLO NÚÑEZ Fabricio",
+      "nivelGrado": "Secundaria - 3° Año",
+      "mesesDebidos": 6,
       "deuda": 2100
     },
     {
@@ -222,14 +222,14 @@
       "alumno": "ROJAS SALAS Luis Alberto",
       "nivelGrado": "Inicial - 5 años",
       "mesesDebidos": 6,
-      "deuda": 1800
+      "deuda": 2100
     },
     {
       "dni": "71234567",
       "alumno": "GARCÍA PÉREZ María",
       "nivelGrado": "Primaria - 3° Grado",
-      "mesesDebidos": 5,
-      "deuda": 1500
+      "mesesDebidos": 6,
+      "deuda": 1800
     }
   ]
 }
