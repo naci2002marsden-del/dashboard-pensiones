@@ -1,10 +1,10 @@
 {
-  "generado": "2026-08-31T14:56:31-05:00",
+  "generado": "2026-08-31T15:02:55-05:00",
   "anioEscolar": "2026",
   "institucion": "COLEGIO CLIMAT",
   "mesActual": "Agosto",
   "kpis": {
-    "totalRecaudado": 1250,
+    "totalRecaudado": 1400,
     "pctCobranzaMes": 14.4,
     "totalAlumnos": 14,
     "alDia": 0,
@@ -50,7 +50,7 @@
     },
     {
       "mes": "Setiembre",
-      "real": 350,
+      "real": 500,
       "esperado": 4850
     },
     {
@@ -71,10 +71,18 @@
   ],
   "ingresosPorNivel": {
     "Inicial": 0,
-    "Primaria": 650,
+    "Primaria": 800,
     "Secundaria": 600
   },
   "ultimosPagos": [
+    {
+      "id": "REC-2026-0005",
+      "fecha": "31/08/2026",
+      "alumno": "MENDOZA LÓPEZ Ana María",
+      "mes": "Setiembre",
+      "monto": 150,
+      "metodo": "Transferencia"
+    },
     {
       "id": "REC-2026-0004",
       "fecha": "30/08/2026",
