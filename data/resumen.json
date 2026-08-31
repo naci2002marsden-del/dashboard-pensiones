@@ -1,11 +1,11 @@
 {
-  "generado": "2026-08-31T14:54:45-05:00",
+  "generado": "2026-08-31T14:56:31-05:00",
   "anioEscolar": "2026",
   "institucion": "COLEGIO CLIMAT",
   "mesActual": "Agosto",
   "kpis": {
-    "totalRecaudado": 800,
-    "pctCobranzaMes": 10.3,
+    "totalRecaudado": 1250,
+    "pctCobranzaMes": 14.4,
     "totalAlumnos": 14,
     "alDia": 0,
     "morosos": 14,
@@ -45,12 +45,12 @@
     },
     {
       "mes": "Agosto",
-      "real": 500,
+      "real": 700,
       "esperado": 4850
     },
     {
       "mes": "Setiembre",
-      "real": 100,
+      "real": 350,
       "esperado": 4850
     },
     {
@@ -71,8 +71,8 @@
   ],
   "ingresosPorNivel": {
     "Inicial": 0,
-    "Primaria": 400,
-    "Secundaria": 400
+    "Primaria": 650,
+    "Secundaria": 600
   },
   "ultimosPagos": [
     {
@@ -88,7 +88,7 @@
       "fecha": "30/08/2026",
       "alumno": "VARGAS RÍOS Sofía",
       "mes": "Setiembre",
-      "monto": 100,
+      "monto": 350,
       "metodo": "Yape/Plin"
     },
     {
@@ -96,7 +96,7 @@
       "fecha": "30/08/2026",
       "alumno": "CASTILLO NÚÑEZ Fabricio",
       "mes": "Agosto",
-      "monto": 200,
+      "monto": 400,
       "metodo": "Efectivo"
     },
     {
@@ -129,13 +129,6 @@
       "nivelGrado": "Secundaria - 4° Año",
       "mesesDebidos": 7,
       "deuda": 2800
-    },
-    {
-      "dni": "70000003",
-      "alumno": "CASTILLO NÚÑEZ Fabricio",
-      "nivelGrado": "Secundaria - 3° Año",
-      "mesesDebidos": 7,
-      "deuda": 2600
     },
     {
       "dni": "70000002",
@@ -171,6 +164,13 @@
       "nivelGrado": "Primaria - 3° Grado",
       "mesesDebidos": 7,
       "deuda": 2450
+    },
+    {
+      "dni": "70000003",
+      "alumno": "CASTILLO NÚÑEZ Fabricio",
+      "nivelGrado": "Secundaria - 3° Año",
+      "mesesDebidos": 6,
+      "deuda": 2400
     },
     {
       "dni": "70000001",
