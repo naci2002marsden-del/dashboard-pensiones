@@ -1,11 +1,11 @@
 {
-  "generado": "2026-08-31T15:30:23-05:00",
+  "generado": "2026-08-31T22:10:05-05:00",
   "anioEscolar": "2026",
   "institucion": "COLEGIO CLIMAT",
   "mesActual": "Agosto",
   "kpis": {
-    "totalRecaudado": 2450,
-    "pctCobranzaMes": 8.3,
+    "totalRecaudado": 3300,
+    "pctCobranzaMes": 15.6,
     "totalAlumnos": 14,
     "alDia": 0,
     "morosos": 14,
@@ -45,17 +45,17 @@
     },
     {
       "mes": "Agosto",
-      "real": 400,
+      "real": 750,
       "esperado": 4800
     },
     {
       "mes": "Setiembre",
-      "real": 1200,
+      "real": 1400,
       "esperado": 4800
     },
     {
       "mes": "Octubre",
-      "real": 200,
+      "real": 500,
       "esperado": 4800
     },
     {
@@ -70,11 +70,43 @@
     }
   ],
   "ingresosPorNivel": {
-    "Inicial": 350,
-    "Primaria": 1500,
+    "Inicial": 1000,
+    "Primaria": 1700,
     "Secundaria": 600
   },
   "ultimosPagos": [
+    {
+      "id": "REC-2026-0012",
+      "fecha": "31/08/2026",
+      "alumno": "FLORES CHÁVEZ Diego",
+      "mes": "",
+      "monto": 0,
+      "metodo": ""
+    },
+    {
+      "id": "REC-2026-0011",
+      "fecha": "31/08/2026",
+      "alumno": "PÉREZ GARCÍA Juan Carlos",
+      "mes": "Agosto",
+      "monto": 350,
+      "metodo": "Transferencia"
+    },
+    {
+      "id": "REC-2026-0010",
+      "fecha": "31/08/2026",
+      "alumno": "VEGA SOTO Daniela",
+      "mes": "Octubre",
+      "monto": 300,
+      "metodo": "Efectivo"
+    },
+    {
+      "id": "REC-2026-0009",
+      "fecha": "31/08/2026",
+      "alumno": "SALAZAR CUEVA Andrés",
+      "mes": "Setiembre",
+      "monto": 200,
+      "metodo": "Efectivo"
+    },
     {
       "id": "REC-2026-0008",
       "fecha": "31/08/2026",
@@ -122,22 +154,6 @@
       "mes": "Setiembre",
       "monto": 350,
       "metodo": "Yape/Plin"
-    },
-    {
-      "id": "REC-2026-0002",
-      "fecha": "30/08/2026",
-      "alumno": "CASTILLO NÚÑEZ Fabricio",
-      "mes": "Agosto",
-      "monto": 400,
-      "metodo": "Efectivo"
-    },
-    {
-      "id": "REC-2026-0001",
-      "fecha": "29/08/2026",
-      "alumno": "GARCÍA PÉREZ María",
-      "mes": "Setiembre",
-      "monto": 300,
-      "metodo": "Efectivo"
     }
   ],
   "morosos": [
@@ -212,13 +228,6 @@
       "deuda": 2450
     },
     {
-      "dni": "70000001",
-      "alumno": "PÉREZ GARCÍA Juan Carlos",
-      "nivelGrado": "Inicial - 4 años",
-      "mesesDebidos": 7,
-      "deuda": 2100
-    },
-    {
       "dni": "70000003",
       "alumno": "CASTILLO NÚÑEZ Fabricio",
       "nivelGrado": "Secundaria - 3° Año",
@@ -236,6 +245,13 @@
       "dni": "71234567",
       "alumno": "GARCÍA PÉREZ María",
       "nivelGrado": "Primaria - 3° Grado",
+      "mesesDebidos": 6,
+      "deuda": 1800
+    },
+    {
+      "dni": "70000001",
+      "alumno": "PÉREZ GARCÍA Juan Carlos",
+      "nivelGrado": "Inicial - 4 años",
       "mesesDebidos": 6,
       "deuda": 1800
     }
