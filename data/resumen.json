@@ -1,5 +1,5 @@
 {
-  "generado": "2026-08-31T22:10:05-05:00",
+  "generado": "2026-08-31T22:12:38-05:00",
   "anioEscolar": "2026",
   "institucion": "COLEGIO CLIMAT",
   "mesActual": "Agosto",
@@ -76,14 +76,6 @@
   },
   "ultimosPagos": [
     {
-      "id": "REC-2026-0012",
-      "fecha": "31/08/2026",
-      "alumno": "FLORES CHÁVEZ Diego",
-      "mes": "",
-      "monto": 0,
-      "metodo": ""
-    },
-    {
       "id": "REC-2026-0011",
       "fecha": "31/08/2026",
       "alumno": "PÉREZ GARCÍA Juan Carlos",
@@ -154,6 +146,14 @@
       "mes": "Setiembre",
       "monto": 350,
       "metodo": "Yape/Plin"
+    },
+    {
+      "id": "REC-2026-0002",
+      "fecha": "30/08/2026",
+      "alumno": "CASTILLO NÚÑEZ Fabricio",
+      "mes": "Agosto",
+      "monto": 400,
+      "metodo": "Efectivo"
     }
   ],
   "morosos": [
