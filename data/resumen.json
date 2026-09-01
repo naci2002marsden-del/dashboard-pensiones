@@ -1,11 +1,11 @@
 {
-  "generado": "2026-08-31T22:12:38-05:00",
+  "generado": "2026-08-31T22:30:20-05:00",
   "anioEscolar": "2026",
   "institucion": "COLEGIO CLIMAT",
   "mesActual": "Agosto",
   "kpis": {
-    "totalRecaudado": 3300,
-    "pctCobranzaMes": 15.6,
+    "totalRecaudado": 8200,
+    "pctCobranzaMes": 22.9,
     "totalAlumnos": 14,
     "alDia": 0,
     "morosos": 14,
@@ -20,12 +20,12 @@
     },
     {
       "mes": "Marzo",
-      "real": 0,
+      "real": 350,
       "esperado": 4800
     },
     {
       "mes": "Abril",
-      "real": 0,
+      "real": 350,
       "esperado": 4800
     },
     {
@@ -40,12 +40,12 @@
     },
     {
       "mes": "Julio",
-      "real": 650,
+      "real": 1350,
       "esperado": 4800
     },
     {
       "mes": "Agosto",
-      "real": 750,
+      "real": 1100,
       "esperado": 4800
     },
     {
@@ -71,89 +71,89 @@
   ],
   "ingresosPorNivel": {
     "Inicial": 1000,
-    "Primaria": 1700,
-    "Secundaria": 600
+    "Primaria": 6250,
+    "Secundaria": 950
   },
   "ultimosPagos": [
     {
-      "id": "REC-2026-0011",
-      "fecha": "31/08/2026",
-      "alumno": "PÉREZ GARCÍA Juan Carlos",
-      "mes": "Agosto",
+      "id": "REC-2026-0022",
+      "fecha": "05/09/2026",
+      "alumno": "VARGAS RÍOS Sofía",
+      "mes": "agosto",
       "monto": 350,
-      "metodo": "Transferencia"
-    },
-    {
-      "id": "REC-2026-0010",
-      "fecha": "31/08/2026",
-      "alumno": "VEGA SOTO Daniela",
-      "mes": "Octubre",
-      "monto": 300,
       "metodo": "Efectivo"
     },
     {
-      "id": "REC-2026-0009",
-      "fecha": "31/08/2026",
-      "alumno": "SALAZAR CUEVA Andrés",
-      "mes": "Setiembre",
-      "monto": 200,
+      "id": "REC-2026-0021",
+      "fecha": "04/09/2026",
+      "alumno": "VARGAS RÍOS Sofía",
+      "mes": "julio",
+      "monto": 350,
       "metodo": "Efectivo"
     },
     {
-      "id": "REC-2026-0008",
+      "id": "REC-2026-0020",
+      "fecha": "03/09/2026",
+      "alumno": "VARGAS RÍOS Sofía",
+      "mes": "junio",
+      "monto": 350,
+      "metodo": "Efectivo"
+    },
+    {
+      "id": "REC-2026-0019",
+      "fecha": "02/09/2026",
+      "alumno": "VARGAS RÍOS Sofía",
+      "mes": "mayo",
+      "monto": 350,
+      "metodo": "Efectivo"
+    },
+    {
+      "id": "REC-2026-0018",
+      "fecha": "01/09/2026",
+      "alumno": "VARGAS RÍOS Sofía",
+      "mes": "abril",
+      "monto": 350,
+      "metodo": "Efectivo"
+    },
+    {
+      "id": "REC-2026-0017",
       "fecha": "31/08/2026",
       "alumno": "VARGAS RÍOS Sofía",
-      "mes": "Setiembre",
-      "monto": 400,
-      "metodo": "Yape/Plin"
-    },
-    {
-      "id": "REC-2026-0007",
-      "fecha": "31/08/2026",
-      "alumno": "ROJAS SALAS Luis Alberto",
-      "mes": "Julio",
+      "mes": "Marzo",
       "monto": 350,
       "metodo": "Efectivo"
     },
     {
-      "id": "REC-2026-0006",
+      "id": "REC-2026-0016",
       "fecha": "31/08/2026",
-      "alumno": "GARCÍA PÉREZ María",
-      "mes": "Julio",
-      "monto": 300,
-      "metodo": "Transferencia"
+      "alumno": "MORALES PINO Joaquín",
+      "mes": "",
+      "monto": 0,
+      "metodo": ""
     },
     {
-      "id": "REC-2026-0005",
+      "id": "REC-2026-0015",
       "fecha": "31/08/2026",
-      "alumno": "MENDOZA LÓPEZ Ana María",
-      "mes": "Setiembre",
+      "alumno": "VARGAS RÍOS Sofía",
+      "mes": "Agosto",
       "monto": 150,
+      "metodo": "Efectivo"
+    },
+    {
+      "id": "REC-2026-0014",
+      "fecha": "31/08/2026",
+      "alumno": "VARGAS RÍOS Sofía",
+      "mes": "Julio",
+      "monto": 350,
       "metodo": "Transferencia"
     },
     {
-      "id": "REC-2026-0004",
-      "fecha": "30/08/2026",
-      "alumno": "GÓMEZ SILVA Mateo",
-      "mes": "Octubre",
-      "monto": 200,
-      "metodo": "Efectivo"
-    },
-    {
-      "id": "REC-2026-0003",
-      "fecha": "30/08/2026",
+      "id": "REC-2026-0013",
+      "fecha": "31/08/2026",
       "alumno": "VARGAS RÍOS Sofía",
-      "mes": "Setiembre",
-      "monto": 350,
-      "metodo": "Yape/Plin"
-    },
-    {
-      "id": "REC-2026-0002",
-      "fecha": "30/08/2026",
-      "alumno": "CASTILLO NÚÑEZ Fabricio",
       "mes": "Agosto",
-      "monto": 400,
-      "metodo": "Efectivo"
+      "monto": 200,
+      "metodo": "Yape/Plin"
     }
   ],
   "morosos": [
@@ -168,13 +168,6 @@
       "dni": "70000005",
       "alumno": "QUISPE MAMANI Lucía",
       "nivelGrado": "Primaria - 5° Grado",
-      "mesesDebidos": 7,
-      "deuda": 2450
-    },
-    {
-      "dni": "70000007",
-      "alumno": "VARGAS RÍOS Sofía",
-      "nivelGrado": "Primaria - 1° Grado",
       "mesesDebidos": 7,
       "deuda": 2450
     },
@@ -228,13 +221,6 @@
       "deuda": 2450
     },
     {
-      "dni": "70000003",
-      "alumno": "CASTILLO NÚÑEZ Fabricio",
-      "nivelGrado": "Secundaria - 3° Año",
-      "mesesDebidos": 6,
-      "deuda": 2100
-    },
-    {
       "dni": "70000004",
       "alumno": "ROJAS SALAS Luis Alberto",
       "nivelGrado": "Inicial - 5 años",
@@ -254,6 +240,20 @@
       "nivelGrado": "Inicial - 4 años",
       "mesesDebidos": 6,
       "deuda": 1800
+    },
+    {
+      "dni": "70000003",
+      "alumno": "CASTILLO NÚÑEZ Fabricio",
+      "nivelGrado": "Secundaria - 3° Año",
+      "mesesDebidos": 5,
+      "deuda": 1750
+    },
+    {
+      "dni": "70000007",
+      "alumno": "VARGAS RÍOS Sofía",
+      "nivelGrado": "Primaria - 1° Grado",
+      "mesesDebidos": 3,
+      "deuda": 1050
     }
   ]
 }
